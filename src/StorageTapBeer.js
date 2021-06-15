@@ -24,7 +24,7 @@ function StorageTapBeer({ tap }) {
   // Using if sentence to improve readability
   if (percentage > 50) {
     percentageColor = "#63c8ba";
-  } else if (percentage > 25) {
+  } else if (percentage > 20) {
     percentageColor = "#ffc85b";
   } else {
     percentageColor = "#ff6b2b";
