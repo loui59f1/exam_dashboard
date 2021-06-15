@@ -1,0 +1,79 @@
+// Importing the variable stylesheet
+@import "../abstracts/variables";
+
+.orders {
+  position: relative;
+  padding: 30px 45px;
+  border-radius: 0px 50px 50px 50px;
+  height: 500px;
+
+  @include sm {
+    height: 330px;
+  }
+}
+
+.disable-scrollbars {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.orderlist {
+  position: relative;
+  margin-top: 25px;
+  overflow-y: scroll;
+  height: auto !important;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: 1fr;
+  height: 420px !important;
+
+  @include rwd(600) {
+    grid-template-columns: 1fr 1fr;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    height: 250px !important;
+  }
+
+  @include rwd(1500) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.orders h3 {
+  color: $blue;
+  letter-spacing: 1px;
+}
+
+.order-card {
+  padding: 10px 30px;
+  padding-right: 20px;
+  background-color: $transparent;
+  backdrop-filter: blur(5px);
+  border-radius: 40px 40px 40px 0;
+}
+
+.orderlist li {
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+.orderlist ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.order_queue {
+  position: absolute;
+  right: 45px;
+  top: 22px;
+  display: inline-block;
+}
+
+.queue_number {
+  font-size: 23px;
+  color: $blue;
+  font-weight: 800;
+  margin-left: 15px;
+  position: relative;
+  top: 3px;
+}

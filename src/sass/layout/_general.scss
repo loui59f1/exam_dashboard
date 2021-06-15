@@ -1,0 +1,63 @@
+// Importing the variable stylesheets
+@import "../abstracts/variables";
+
+body {
+  background: radial-gradient(circle, #33325f 62%, #12112e 100%);
+  //background-image: url("../img/gradient_bg.jpg");
+  background-size: cover;
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
+  font-size: 0.9em;
+  // 130% zoom test
+  max-width: 100%;
+  margin: auto;
+
+  @include rwd(1800){
+    overflow-y: hidden;
+  }
+}
+
+.dashboard {
+  display: block;
+  padding: 60px 25px;
+  padding-bottom: 0;
+
+  @include rwd(1000) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3em;
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  @include rwd(997) {
+    padding-top: 30px;
+  }
+
+  @include rwd(1200) {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  @include rwd(1600) {
+    grid-template-columns: 2.5fr 1fr 1fr;
+  }
+}
+
+.card {
+  background-color: $transparent;
+  backdrop-filter: blur(50px);
+  margin-bottom: 30px;
+  // border-radius: 40px;
+
+  @include sm {
+    margin-bottom: 35px;
+  }
+
+  @include rwd(1000) {
+    margin-bottom: 0;
+  }
+}
+
+.extracolumn {
+  padding: 15px;
+}
