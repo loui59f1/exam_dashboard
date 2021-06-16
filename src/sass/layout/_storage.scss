@@ -9,12 +9,12 @@
     display: grid;
     grid-template-columns: 0.6fr 1fr;
     grid-gap: 3em;
-    padding: 2.5em 45px;
+    padding: 2.7em 45px;
     margin-bottom: 25px;
   }
 
   @include xl {
-    grid-template-columns: 0.4fr 1fr;
+    grid-template-columns: 0.35fr 1fr;
     grid-gap: 3em;
   }
 }
@@ -34,6 +34,7 @@
     max-height: 300px;
     height: 100%;
     margin-bottom: 0px;
+    padding-bottom: 40px;
   }
 }
 
@@ -66,8 +67,13 @@
   border-radius: 50px 50px 50px 0px;
   overflow-x: scroll;
   height: 300px;
-  padding-top: 60px;
-  padding-bottom: 0px;
+  padding-top: 30px;
+  padding-bottom: 40px;
+
+  h1 {
+    padding-top: 0px;
+    padding-left: 30px;
+  }
 
   @include sm {
     margin-top: 2em;
@@ -75,6 +81,19 @@
 
   @include lg {
     margin-top: 0em;
+  }
+}
+
+.tablist .row {
+
+  @include sm {
+  }
+
+  @include lg {
+    padding: 10px 0px;
+    margin-top: -1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 }
 
@@ -129,7 +148,7 @@
   font-weight: 400;
 
   @include rwd(1500){
-    left: 33%;
+    left: 28%;
     top: 30%;
     font-size: 18px;
   }

@@ -1,35 +1,33 @@
-import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import StorageBeer from "./StorageBeer.js";
 import StorageTapBeer from "./StorageTapBeer.js";
-
-import { Splide, SplideSlide } from '@splidejs/react-splide';
 
 
 export default function Storage({ storage, taps }) {
 
-  const storageList = storage.map(beer => (
-    <StorageBeer beer={beer} key={beer.name} />
-  ));
-  const tapList = taps.map(tap => <SplideSlide key={tap.id}><div class="splide__slide__container"><StorageTapBeer tap={tap} key={tap.id} /></div></SplideSlide>);
+  let taps_sorted = [...taps];
+  let storage_sorted = [...storage];
+
+  taps_sorted.sort((a, b) => (a.level > b.level) ? 1 : -1)
+  storage_sorted.sort((a, b) => (a.amount > b.amount) ? 1 : -1)
+
+  const storageList = storage_sorted.map(beer => (<StorageBeer beer={beer} key={beer.name} />));
+  const tapList = taps_sorted.map(tap => (<StorageTapBeer tap={tap} key={tap.id} />));
 
   return (
     <div className="storage">
       <div className="storagelist card">
         <div className="storage_list disable-scrollbars">
-          {storageList}
+          <h1>Storage</h1>
+          <div className="row">
+            {storageList}
+          </div>
         </div>
       </div>
       <div className="tablist card disable-scrollbars">
-        {/* <h1>Taps</h1> */}
-        <Splide options={{
-          rewind: true,
-          perPage: 5,
-          perMove: 2,
-          gap: '1rem',
-        }} onMoved={(splide, newIndex) => { console.log('moved', newIndex) }}
-        >>
+        <h1>Taps</h1>
+        <div className="row">
           {tapList}
-        </Splide>
+        </div>
       </div>
     </div>
   );

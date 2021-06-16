@@ -32,8 +32,9 @@ function StorageTapBeer({ tap }) {
 
   return (
     <div className="storage_tap_beer">
-      <h3>{tap.beer}</h3>
+      <h3>Tap {tap.id}</h3>
       <DiagramStorageData percentage={percentage} percentageColor={percentageColor} />
+      <h3>{tap.beer}</h3>
     </div>
   );
 }
