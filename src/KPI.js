@@ -9,20 +9,21 @@ export default function KPINumbers({ queue, serving }) {
 
   // KPI - Total sales of day
 
-  const allBeer = [];
+  let allBeer = [];
 
-  queue.forEach(orders => {
+  serving.forEach(orders => {
     orders.order.map(beer => {
       allBeer.push(beer);
       return allBeer;
     });
-  });
+  })
 
   function findTotalSales(customer) {
     customer.order.map(beer => {
       duplicatesResult[beer] = (duplicatesResult[beer] || 0) + 1;
       return duplicatesResult;
     });
+
     let obj = Object.entries(duplicatesResult).map(([key, value]) => {
       return { value, name: key };
     });
@@ -42,11 +43,11 @@ export default function KPINumbers({ queue, serving }) {
     });
 
     const totalAmountNumber = totalArr.reduce(
-      (previousScore, currentScore, index) => previousScore + currentScore,
+      (previousScore, currentScore) => previousScore + currentScore,
       0
     );
 
-    totalAmount = totalAmountNumber;
+    totalAmount += totalAmountNumber;
   }
 
   // KPI - Customer served and beers sold today
