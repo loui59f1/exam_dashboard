@@ -6,10 +6,9 @@ function StorageBeer({ beer }) {
 
   let percentageColor;
 
-  // Using if sentence to improve readability
-  if (beer.amount > 5) {
+  if (beer.amount > 4) {
     percentageColor = "#63c8ba";
-  } else if (beer.amount > 3) {
+  } else if (beer.amount > 2) {
     percentageColor = "#ffc85b";
   } else {
     percentageColor = "#fa5534";

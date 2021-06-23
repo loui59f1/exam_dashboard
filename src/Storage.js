@@ -4,11 +4,13 @@ import StorageTapBeer from "./StorageTapBeer.js";
 
 export default function Storage({ storage, taps }) {
 
-  let taps_sorted = [...taps];
-  let storage_sorted = [...storage];
+  // Copy into new arrays with concat:
+  const taps_sorted = taps.concat();
+  const storage_sorted = storage.concat();
 
-  taps_sorted.sort((a, b) => (a.level > b.level) ? 1 : -1)
-  storage_sorted.sort((a, b) => (a.amount > b.amount) ? 1 : -1)
+  // Sort the data by property level and amount:
+  taps_sorted.sort((a, b) => (a.level > b.level) ? 1 : -1);
+  storage_sorted.sort((a, b) => (a.amount > b.amount) ? 1 : -1);
 
   const storageList = storage_sorted.map(beer => (<StorageBeer beer={beer} key={beer.name} />));
   const tapList = taps_sorted.map(tap => (<StorageTapBeer tap={tap} key={tap.id} />));

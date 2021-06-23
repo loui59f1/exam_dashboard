@@ -91,7 +91,7 @@ export default function KPINumbers({ queue, serving }) {
       <h1>KPI</h1>
       <div className="kpi_date">
         <p>
-          {date} - {month < 10 ? `0${month}` : `${month}`} - {year}
+          ,{date} - {month < 10 ? `0${month}` : `${month}`} - {year}
         </p>
       </div>
       <div className="row">
